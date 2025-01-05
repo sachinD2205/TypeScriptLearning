@@ -1,9 +1,9 @@
 ## TypeScript
 
-<!--  Installation -->
+# TypeScript Installation
 
 npx create-next-app@latest app_name --ts
 
-<!-- tsconfig.jsohn -->
+# tsconfig.json
 
 we can config typescript here

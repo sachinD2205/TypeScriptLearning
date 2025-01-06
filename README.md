@@ -1,5 +1,7 @@
 # TypeScript
 
+https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-5.html
+
 ## TypeScript Installation
 
 npx create-next-app@latest app_name --ts

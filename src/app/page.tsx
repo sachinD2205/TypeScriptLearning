@@ -12,6 +12,22 @@ export default function Home() {
     name: "fist book",
     value: 100,
   });
+
+  interface FormData {
+    name: string;
+  }
+
+  const [name, setName] = useState("");
+  const [formData, setFormData] = useState<FormData>({ name: "" });
+
+  const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e?.target?.value);
+  };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormData({ name: name });
+  };
+
   return (
     <div>
       <h3>
@@ -25,6 +41,19 @@ export default function Home() {
         }
         text={"First Button"}
       />
+      <hr />
+      <hr />
+      <h1> Form Handling</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          onChange={handleChangeName}
+          value={name}
+          placeholder="Enter your name"
+        />
+        <button type="submit">Submit</button>
+      </form>
+      <h3> Submited Data :{formData?.name}</h3>
     </div>
   );
 }

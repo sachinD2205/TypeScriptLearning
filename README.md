@@ -52,3 +52,17 @@ const [value,setValue]=useState(0)
   })
 
 //======================================= Form Handling
+
+const [name,setName]=useState<string | undefined>("")
+const handleChangeName = (e:React.changeEvent<HtmlInputElement>)=> {
+setName(e?.target?.value);
+}
+
+const handleSubmit =(e:React.FormEvent<HtmlInputElement>)=> {
+e.preventDefault();
+console.log("e",e);
+}
+
+<form onSubmit={handleSubmit}>
+<input onChange={handleChangeName} value={name}/>
+</form>

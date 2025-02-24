@@ -1,7 +1,11 @@
-export type User = { name: string; age: number; occupation: string };
+interface User {
+  name: string;
+  age: number;
+  occupation: string;
+}
 
 // here we created tuple for array
-export const users: Array<User> = [
+export const users: User[] = [
   {
     name: "Max Mustermann",
     age: 25,
@@ -14,11 +18,7 @@ export const users: Array<User> = [
   },
 ];
 
-export function logPerson(user: {
-  name: string;
-  age: number;
-  occupation: string;
-}) {
+export function logPerson(user: User) {
   console.log(` - ${user.name}, ${user.age}`);
 }
 
